@@ -1,0 +1,11 @@
+body {
+    background-color: #efefef;
+}
+
+div div {
+    display: none;
+}
+
+span span {
+    display: block;
+}
