@@ -290,8 +290,25 @@ function callback(result) {
     console.log('Result: ' , result);
 }
 
-sum(2, 3, callback)
+// callback(6)
 
+// sum(2, 3, callback)
+
+//! Fat arrow function 
+
+const myFatArrowFunction = (a, b) => a + b
+
+// const r = myFatArrowFunction(1, 2)
+
+const otherFAF = (a, b) => {
+    return a + b
+}
+const r = otherFAF (1, 2)
+// console.log(r);
+
+sum(2, 3, function (r) {
+    console.log('I´m function and result is: ', r)
+})
 
 
 
