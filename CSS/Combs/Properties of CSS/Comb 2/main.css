@@ -1,0 +1,72 @@
+body {
+    background-color: #efefef;
+}
+
+a {
+    background-color: red;
+    border: 1px solid #d00;
+    border-radius: 2px;
+    color: hotpink;
+    padding: 10px;
+    text-decoration: none;
+}
+
+a:link {
+    color: pink;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    background-color: #f55;
+    color: white;
+    text-decoration: underline;
+}
+
+a:active {
+    color: black;
+}
+
+hr {
+    margin-top: 13px;
+}
+
+ul {
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 2px;
+list-style-type: none;
+padding-left: 0px;
+}
+
+ul li {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: #4caf50;
+    color: white;
+    padding-bottom: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 12px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td {
+    border: solid 1px #ddd;
+    padding: 8px;
+}
