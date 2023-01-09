@@ -25,6 +25,13 @@ app.patch('/users/:id', user.update);
 app.delete('/users/:id', user.destroy);
 //! 204 ok (delete)
 
+app.use(express.static('app'));
+
+app.get('/', (req, res) => {
+    console.log(__dirname)
+    res.sendFile(`${__dirname}/index.html`)
+})
+
 app.get('*', (req,res) => {
     res.status(404).send('This page not exist');
 })
