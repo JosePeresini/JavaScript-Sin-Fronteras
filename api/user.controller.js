@@ -1,18 +1,34 @@
+const Users = require('./User');
+
 const User = {
-    get: (req, res) => {
-        res.status(200).send('This is a piggy');
+    get: async (req, res) => {
+        const { id } = req.params;
+        const user = await Users.findOne({ _id: id });
+        res.status(200).send(user);
     },
-    list: (req, res) => {
-        res.status(200).send('Hello Piggy');
+    list: async (req, res) => {
+        const users = await Users.find();
+        res.status(200).send(users);
     },
-    create: (req, res) => {
-        res.status(201).send('Create Piggy');
+    create: async (req, res) => {
+        const user = new Users(req.body);
+        const savedUser = await user.save();
+        res.status(201).send(savedUser._id);
     },
-    update: (req, res) => {
-        res.status(204).send('Actualize Piggys');
+    update: async (req, res) => {
+        const { id } = req.params;
+        const user = await Users.findOne({ _id: id });
+        Object.assign(user, req.body);
+        await user.save();
+        res.sendStatus(204);
     },
-    destroy: (req, res) => {
-        res.status(204).send('Delete Piggy');
+    destroy: async (req, res) => {
+        const { id } = req.params;
+        const user = await Users.findOne({ _id: id });
+        if (user) {
+            user.remove();
+        }
+        res.sendStatus(204);
     }
 }
 
